@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <!-- <button>SHOW ALL UPLOADS</button> -->
+    <!-- <object data="f.pdf" height="300px" width="300px"></object> -->
+    <section class="hero is-primary">
+        <div class="hero-body">
+          <p class="title">
+            WELCOME ADMIN
+          </p>
+          <p class="subtitle">
+            THIS IS YOUR PERSONAIZED DASHBOARD
+          </p>
+        </div>
+      </section>
+    <br>
+    <button id = "alluploadbutton" class="button is-warning is-light">Show ALL Uploads</button>
+    <br>
+    <br>
+    <form action="/client/logout" method="post">
+        <button id="logoutbutton" type="submit" class="button is-warning is-danger">logout</button>
+    </form>
+    <br>
+    <br>
+    <div id="alluploads"></div>
+</body>
+<script src="/adminclient.js"></script>
+</html>

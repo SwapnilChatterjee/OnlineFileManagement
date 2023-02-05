@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/client.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulsma.css'>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js'>
+  </script>
+</head>
+
+<body>
+  <section class="hero is-success">
+    <div class="hero-body">
+      <p class="title">
+        HI <%= locals.user %>!!!
+      </p>
+      <p class="subtitle">
+        WELCOME TO YOUR PERSONALIZED DASHBOARD
+      </p>
+    </div>
+  </section>
+  <br>
+
+  <form action="/client/dashboard" method="post" enctype="multipart/form-data">
+    <div>
+      <h4 class="title is-4">Enter File Name</h4>
+      <input class="input is-info" style="width: 33%" type="text" name="filename" id="filename">
+    </div>
+    <input type="file" name="files" id="file1">
+    <br>
+    <br>
+    <button class="button is-info is-light" type="submit" id="submitButton">Submit</button>
+  </form>
+  <br>
+  <br>
+  <form id="formforUploads">
+    <button id="submitButton1" value="<%= locals.user %>" class="button is-link is-light" type="submit">Show
+      Uploads</button>
+  </form>
+  <br>
+  <br>
+  <form action="/client/logout" method="post">
+    <button id="logoutbutton" type="submit" class="button is-danger is-rounded">logout</button>
+  </form>
+  <!-- <form action="/client/deleteAcc" method="get">
+    <button id="deletebutton" type="submit" class="button is-danger">DELETE MY ACCOUNT</button>
+  </form> -->
+  <br>
+  <br>
+  <br>  
+  
+  <button id="deletebutton" type="submit" class="button is-danger js-modal-trigger" data-target="modal-js-example">DELETE MY ACCOUNT</button>
+  <hr style="height: 5px;
+                    background: teal;
+                    margin: 20px 0;
+                    box-shadow: 0px 0px 4px 2px rgba(204,204,204,1);">
+  <br>
+  <br>
+  <div id="feeds"></div>
+  <div id="modal-js-example" class="modal">
+    <div class="modal-background"></div>
+  
+    <div class="modal-content">
+      <div class="box">
+        <p>DO YOU REALLY WANT TO DELETE YOUR ACCOUNT FOREVER!!!</p>
+        <!-- Your content -->
+        <span>
+          <form action="/client/deleteAcc" method="get"><button class="button is-success">YES</button></form>
+          <br>
+          <form action="/client/nodeleteAcc" method="get"><button class="button is-danger">NO!, GO BACK</button></form>
+
+        </span>
+      </div>
+    </div>
+  
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+</body>
+<script src="/client.js"></script>
+
+</html>

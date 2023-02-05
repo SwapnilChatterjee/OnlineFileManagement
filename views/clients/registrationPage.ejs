@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+</head>
+<body>
+    <div>
+        <h1>ENTER THE INFROMATION FOR REGISTRATION</h1>
+        <form action="/client/register" method="POST">
+            <div>
+                <div><label>NAME:</label></div>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <div><label>USERNAME:</label></div>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div>
+                <div><label>PASSWORD:</label></div>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div>
+                <div><label>CONFIRM PASSWORD:</label></div>
+                <input type="password" name="confirmPass" id="confirmPass" required>
+            </div>
+            <br>
+            <div><%= locals.message %></div>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+</body>
+</html>

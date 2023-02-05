@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/client.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <section class="hero is-info">
+        <div class="hero-body">
+          <p class="title">
+            ENTER THE CREDENTIALS FOR LOGIN
+          </p>
+          <p class="subtitle">
+            user normal login or admin login(with admin credentials)
+          </p>
+        </div>
+      </section>
+    <div>
+        <br>
+        <br>
+        <form action="/client/login" method="POST">
+            <div>
+                <div><label class="title is-4">USERNAME:</label></div>
+                <input class="input is-rounded input is-focused is-medium" style="width: 50%" type="text" name="username" id="username" required>
+            </div>
+            <br>
+            <div>
+                <div><label class="title is-4">PASSWORD:</label></div>
+                <input class="input is-rounded input is-focused is-medium"  style="width: 50%" type="password" name="password" id="password" required>
+            </div>
+            <br>
+            <button type="LogIN" class="button is-primary is-light">LOG IN</button>
+            <!-- <div><%= locals.message %></div> -->
+            
+        </form>
+        <br>
+        <form action="/client/register" method="get">
+            <button id="signUP" class="button is-danger is-light">SIGN UP(for new users)</button>
+        </form>
+        <br>
+        <br>
+        <!-- <form action="/client/adminlogin" method="get">
+            <button id="signUP">GO FOR ADMIN LOGIN</button>
+        </form> -->
+
+                
+    </div>
+</body>
+
+</html>
