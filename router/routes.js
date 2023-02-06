@@ -161,7 +161,7 @@ router
 
 router
     .route("/dashboard/")
-    .get((req, res) => {
+    .get(isAuth,(req, res) => {
         if (req.isAuthenticated() && req.user.admin)
             res.redirect("/client/admin")
         else if (req.isAuthenticated() && !req.user.admin)
