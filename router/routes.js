@@ -254,7 +254,7 @@ router
         })
     })
 
-router.get("/admin", (req, res) => {
+router.get("/admin", isAdminAuth, (req, res) => {
     if (req.isAuthenticated() && !req.user.admin)
         res.redirect("/client/dashboard")
     else if (req.isAuthenticated() && req.user.admin)
