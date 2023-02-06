@@ -25,6 +25,10 @@ app.use(session({
         maxAge : 1000 * 60 * 60
     }
 }));
+app.use((req, res, next) => {
+    res.set('Cache-Control', 'no-store')
+    next()
+  })
 app.use(passport.authenticate('session'));
 app.use(passport.initialize())
 app.use(passport.session())
